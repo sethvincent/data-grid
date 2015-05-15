@@ -1,0 +1,28 @@
+.data-grid-list {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  overflow: auto;
+}
+
+.data-grid-row {
+  list-style-type: none;
+  height: 30px;
+}
+
+.data-grid-properties {
+  margin: 0px;
+  padding: 0px;
+}
+
+.data-grid-property {
+  font-size: 13px;
+  border-bottom: 0px;
+  display: inline;
+}
+
+.data-grid-property-value {
+  height: 30px;
+  border: 1px solid #efefea;
+  border-bottom: 0px;
+}

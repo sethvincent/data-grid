@@ -1,57 +1,42 @@
-var ViewList = require('view-list')
-var h = require('virtual-dom/h')
-var extend = require('extend')
-var value = require('dom-value')
-var dataset = require('data-set')
+var through = require('through2')
+var debounce = require('lodash.debounce')
+var raf = require('raf')
 
-module.exports = function (opts) {
-  var options = extend({
-    className: 'data-grid-list',
-    eachrow: rows,
-    editable: true
-  }, opts)
-  
-  var list = ViewList(options)
+var dataGrid = require('data-grid')({
+  appendTo: document.body,
+  height: window.innerHeight
+})
 
-  function rows (row) {
-    if (!row.value) row = { value: row }
-    var properties = Object.keys(row.value)
+dataGrid.on('click', function (e, row) {
+  console.log('ya clicked', row)
+})
 
-    var elements = properties.map(function (key) {
+dataGrid.on('input', function (e, value, row) {
+  console.log('ya inputted', value, row)
+  render(all)
+})
 
-      function onclick (e) {
-        list.send('click', e, row)
-      }
+var render = debounce(dataGrid.render.bind(dataGrid), 100)
 
-      function oninput (e) {
-        if (options.editable) {
-          var val = value(e.target)
-          var ds = dataset(e.target)
-          row.value[ds.key] = val
-          list.send('input', e, val, row)
-        }
-      }
+var all = []
+var model = through.obj(function (chunk, enc, cb) {
+  this.push(chunk)
+  cb()
+})
 
-      var attributes = { 
-        'data-type': 'string',
-        'data-key': key
-      }
+model.on('data', function (data) {
+  all.push(data)
+  render(all)
+})
 
-      return h('li.data-grid-property', [
-        h('textarea.data-grid-property-value', {
-          attributes: attributes,
-          onclick: onclick,
-          oninput: oninput
-        }, [row.value[key]])
-      ])
-    })
-
-    return h('li.data-grid-row', {
-      attributes: { 'data-key': row.key }
-    }, [
-      h('ul.data-grid-properties', elements)
-    ])
-  }
-
-  return list 
+for (var i=0;i<=100000;i++) {
+  model.write({
+    key: i,
+    value: {
+      title: 'this is title ' + i,
+      description: 'this has long text that cuts off its cool this has long text that cuts off its cool this has long text that cuts off its cool this has long text that cuts off its cool this has long text that cuts off its cool ',
+      someField: 'this is a field',
+      another: '123123'
+    }
+  })
 }

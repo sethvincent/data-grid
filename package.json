@@ -1,5 +1,5 @@
 {
-  "name": "data-grid",
+  "name": "data-grid-example",
   "description": "a grid for viewing & editing tabular data created with virtual-dom",
   "version": "0.0.1",
   "repository": {
@@ -8,20 +8,17 @@
   "main": "index.js",
   "style": "style.css",
   "scripts": {
-    "example": "budo examples/simple.js --live",
-    "test": "node test.js"
+    "bundle": "browserify index.js -o bundle.js",
+    "start": "budo index.js:bundle.js --live"
   },
   "dependencies": {
-    "data-set": "^4.0.0",
-    "dom-value": "0.0.0",
-    "extend": "^2.0.1",
-    "view-list": "^1.4.0",
+    "data-grid": "0.0.1",
+    "lodash.debounce": "^3.0.3",
+    "raf": "^2.0.4",
+    "through2": "^0.6.5",
     "virtual-dom": "^2.0.1"
   },
   "devDependencies": {
-    "budo": "^4.0.0",
-    "lodash.debounce": "^3.0.3",
-    "raf": "^2.0.4",
-    "through2": "^0.6.5"
+    "budo": "^4.0.0"
   }
 }

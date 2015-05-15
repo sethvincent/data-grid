@@ -1,4 +1,4 @@
-# data-cards
+# data-grid
 
 Simple & performant grid editor/viewer for tabular data. 
 

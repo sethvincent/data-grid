@@ -15,12 +15,6 @@ This module is currently unfinished! It's being developed for use with [flatshee
 
 ### `var grid = Cards([options])`
 
-**options**
-
--  
--  
--  
-
 Any options you can pass to the [view-list](https://github.com/shama/view-list) and [virtual-dom](https://github.com/Matt-Esch/virtual-dom) modules.
 
 ### `grid.render([data])`

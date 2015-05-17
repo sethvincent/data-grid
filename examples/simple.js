@@ -1,24 +1,25 @@
 var through = require('through2')
 var debounce = require('lodash.debounce')
+var dataset = require('data-set')
 var raf = require('raf')
+var observify = require('observify')
 
 var dataGrid = require('../index')({
   appendTo: document.body,
   height: window.innerHeight
 })
 
-dataGrid.on('click', function (e, row) {
-  console.log('ya clicked', row)
+dataGrid.on('scroll', function (html) {})
+dataGrid.on('focus', function (e, property, row) {})
+dataGrid.on('blur', function (e, property, row) {})
+dataGrid.on('click', function (e, property, row) {})
+dataGrid.on('input', function (e, property, row) {
+  
 })
 
-dataGrid.on('input', function (e, value, row) {
-  console.log('ya inputted', value, row)
-  render(all)
-})
+window.render = debounce(dataGrid.render.bind(dataGrid), 100)
 
-var render = debounce(dataGrid.render.bind(dataGrid), 100)
-
-var all = []
+window.all = []
 var model = through.obj(function (chunk, enc, cb) {
   this.push(chunk)
   cb()

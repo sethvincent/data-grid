@@ -15,6 +15,7 @@
     "data-set": "^4.0.0",
     "dom-value": "0.0.0",
     "extend": "^2.0.1",
+    "observify": "^1.1.1",
     "view-list": "^1.4.0",
     "virtual-dom": "^2.0.1"
   },

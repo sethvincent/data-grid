@@ -23,6 +23,8 @@
 
 .data-grid-property-value {
   height: 30px;
+  max-height: 30px !important;
+  overflow: hidden !important;  
   border: 1px solid #efefea;
   border-bottom: 0px;
   border-right: 0px;

@@ -25,4 +25,6 @@
   height: 30px;
   border: 1px solid #efefea;
   border-bottom: 0px;
+  border-right: 0px;
+  resize: none;
 }

@@ -50,6 +50,7 @@ module.exports = function (opts) {
       }
 
       var propertyOptions = {
+        value: row.value[key],
         attributes: { 
           'data-type': 'string', // todo: use property type from options.properties
           'data-key': key
@@ -65,7 +66,7 @@ module.exports = function (opts) {
       }
 
       return h('li.data-grid-property', [
-        h('textarea.data-grid-property-value', propertyOptions, [row.value[key]])
+        h('textarea.data-grid-property-value', propertyOptions)
       ])
     }
 

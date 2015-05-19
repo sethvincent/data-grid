@@ -12,7 +12,7 @@
     "start": "budo index.js:bundle.js --live"
   },
   "dependencies": {
-    "data-grid": "0.0.1",
+    "data-grid": "^0.0.2",
     "lodash.debounce": "^3.0.3",
     "raf": "^2.0.4",
     "through2": "^0.6.5",

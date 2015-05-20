@@ -9,20 +9,34 @@
   "style": "style.css",
   "scripts": {
     "example": "budo examples/simple.js --live",
-    "test": "node test.js"
+    "example-dat": "node examples/dat/server.js & budo examples/dat/browser.js:bundle.js --live --dir=examples/dat/",
+    "test": "node test.js | tap-spec"
   },
   "dependencies": {
     "data-set": "^4.0.0",
     "dom-value": "0.0.0",
     "extend": "^2.0.1",
+    "level": "^1.0.0",
     "observify": "^1.1.1",
     "view-list": "^1.4.0",
     "virtual-dom": "^2.0.1"
   },
   "devDependencies": {
+    "JSONStream": "^1.0.3",
+    "body": "^5.0.0",
     "budo": "^4.0.0",
+    "corsify": "^2.1.0",
+    "cuid": "^1.2.5",
+    "dat-core": "0.0.7",
+    "dom-event": "0.0.5",
+    "extend": "^2.0.1",
     "lodash.debounce": "^3.0.3",
+    "match-routes": "^1.1.1",
     "raf": "^2.0.4",
+    "request": "^2.55.0",
+    "response": "git://github.com/mikeal/response.git",
+    "tap-spec": "^3.0.0",
+    "tape": "^4.0.0",
     "through2": "^0.6.5"
   }
 }

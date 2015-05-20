@@ -8,16 +8,16 @@ module.exports = function (opts) {
   var options = extend({
     className: 'data-grid-list',
     eachrow: rows,
-    editable: true
+    editable: true,
+    properties: {}
   }, opts)
 
   var list = ViewList(options)
 
   function rows (row) {
-    if (!row.value) row = { value: row }
     var properties = Object.keys(row.value)
     var elements = properties.map(element)
-    
+
     function element (key) {
       function getProperty (target) {
         var property = {}

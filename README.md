@@ -35,6 +35,13 @@ Any options you can pass to the [view-list](https://github.com/shama/view-list) 
 </ul>
 ```
 
+### Example: dat + data-grid
+
+```
+npm install
+npm run example-dat
+```
+
 ### Example usage:
 
 ```js

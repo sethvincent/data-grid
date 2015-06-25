@@ -1,7 +1,7 @@
-{
+  {
   "name": "data-grid",
   "description": "a grid for viewing & editing tabular data created with virtual-dom",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": {
     "url": "git://github.com/sethvincent/data-grid.git"
   },
@@ -9,26 +9,31 @@
   "style": "style.css",
   "scripts": {
     "example": "budo examples/simple.js --live",
-    "example-dat": "node examples/dat/server.js & budo examples/dat/browser.js:bundle.js --live --dir=examples/dat/",
-    "test": "node test.js | tap-spec"
+    "example-dat": "node examples/dat/server.js blogs.csv & budo examples/dat/browser.js:bundle.js --live --dir=examples/dat/",
+    "test": "node test.js | tap-spec",
+    "start": "npm run example-dat"
   },
   "dependencies": {
     "data-set": "^4.0.0",
     "dom-value": "0.0.0",
     "extend": "^2.0.1",
     "level": "^1.0.0",
+    "mkdirp": "^0.5.1",
     "observify": "^1.1.1",
+    "osenv": "^0.1.2",
     "view-list": "^1.4.0",
     "virtual-dom": "^2.0.1"
   },
   "devDependencies": {
     "JSONStream": "^1.0.3",
+    "base-element": "^3.0.1",
     "body": "^5.0.0",
     "budo": "^4.0.0",
     "corsify": "^2.1.0",
     "cuid": "^1.2.5",
     "dat-core": "0.0.7",
     "dom-event": "0.0.5",
+    "each-async": "^1.1.1",
     "extend": "^2.0.1",
     "lodash.debounce": "^3.0.3",
     "match-routes": "^1.1.1",

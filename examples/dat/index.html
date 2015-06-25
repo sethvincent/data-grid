@@ -1,19 +1,20 @@
 <html>
   <head>
     <title>data-grid</title>
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900" rel="stylesheet" type="text/css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css" media="screen" charset="utf-8">
   </head>
   <body>
-    <button id="new-row">new row</button>
-    <div class="grid-header">
-      <ul>
-        <li>food</li>
-        <li>pets</li>
-        <li>hobbies</li>
-      </ul>
+    <div class="wrapper">
+      <div class="page-header">
+        <button id="new-row">new row</button>
+        <button id="new-column">new column</button>
+        <a href="http://localhost:4455/csv" id="export-csv">export csv</a>
+        <div id="grid-header"></div>
+      </div>
+      <div id="grid"></div>
     </div>
-    <div class="grid"></div>
     <script src="bundle.js" charset="utf-8"></script>
   </body>
 </html>

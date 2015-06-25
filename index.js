@@ -3,6 +3,7 @@ var h = require('virtual-dom/h')
 var extend = require('extend')
 var value = require('dom-value')
 var dataset = require('data-set')
+var siblings = require('siblings')
 
 module.exports = function (opts) {
   var options = extend({
@@ -66,7 +67,15 @@ module.exports = function (opts) {
       }
 
       return h('li.data-grid-property', [
-        h('textarea.data-grid-property-value', propertyOptions)
+        h('textarea.data-grid-property-value', propertyOptions),
+        h('a.expand-editor', { 
+          href: '#', 
+          onclick: function (e) {
+            var el = siblings(e.target.parentNode)[0]
+            var property = getProperty(el)
+            list.send('click', e, property, row)
+          }
+        }, [h('i.fa.fa-edit', '')])
       ])
     }
 

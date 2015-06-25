@@ -6,12 +6,6 @@ module.exports = APIClient
 function APIClient (opts) {
   if (!(this instanceof APIClient)) return new APIClient(opts)
   opts = opts || {}
-  
-  this.account = {
-    username: opts.username,
-    password: opts.password
-  }
-
   this.host = opts.host || 'http://127.0.0.1:4455'
 }
 
@@ -44,12 +38,16 @@ APIClient.prototype.delete = function (key, cb) {
   return this.request('delete', 'rows/' + key, null, cb)
 }
 
+APIClient.prototype.bulkUpdate = function (opts, cb) {
+  return this.request('put', 'rows', opts, cb)
+}
+
 APIClient.prototype.request = function (method, path, params, cb) {
   if (typeof params === 'function') {
     cb = params
     params = {}
   }
-  console.log('sending request')
+
   var opts = {}
 
   if (method === 'get') {

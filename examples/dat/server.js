@@ -20,7 +20,6 @@ var tmpDir = require('osenv').tmpdir()
 var rootDir = path.join(tmpDir, '.data-editor')
 var dbDir = path.join(rootDir, csvName)
 require('mkdirp').sync(dbDir)
-console.log(dbDir)
 
 var db = require('level')(dbDir)
 var dat = require('dat-core')(db, { valueEncoding: 'json' })

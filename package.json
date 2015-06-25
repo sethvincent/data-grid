@@ -1,7 +1,7 @@
 {
   "name": "data-grid",
   "description": "a grid for viewing & editing tabular data created with virtual-dom",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": {
     "url": "git://github.com/sethvincent/data-grid.git"
   },

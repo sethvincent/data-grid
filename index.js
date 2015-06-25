@@ -73,7 +73,8 @@ module.exports = function (opts) {
           onclick: function (e) {
             var el = siblings(e.target.parentNode)[0]
             var property = getProperty(el)
-            list.send('click', e, property, row)
+            var key = Object.keys(property)[0]
+            list.send('expand', e, el, property, row, key)
           }
         }, [h('i.fa.fa-edit', '')])
       ])

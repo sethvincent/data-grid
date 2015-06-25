@@ -1,4 +1,4 @@
-  {
+{
   "name": "data-grid",
   "description": "a grid for viewing & editing tabular data created with virtual-dom",
   "version": "0.0.3",
@@ -21,6 +21,7 @@
     "mkdirp": "^0.5.1",
     "observify": "^1.1.1",
     "osenv": "^0.1.2",
+    "siblings": "^1.0.1",
     "view-list": "^1.4.0",
     "virtual-dom": "^2.0.1"
   },
